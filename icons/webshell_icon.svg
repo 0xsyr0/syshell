@@ -1,0 +1,95 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient definitions -->
+    <radialGradient id="mainGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#7c4dff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff3b7f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a0f3b;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="terminalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1630;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#0b0712;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7c4dff;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <!-- Filter for glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Matrix pattern -->
+    <pattern id="matrixPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#1a1025" opacity="0.3"/>
+      <text x="10" y="15" font-family="monospace" font-size="8" fill="#7c4dff" opacity="0.2" text-anchor="middle">0</text>
+    </pattern>
+  </defs>
+  
+  <!-- Background with matrix pattern -->
+  <rect width="300" height="300" fill="url(#matrixPattern)"/>
+  
+  <!-- Main circular background -->
+  <circle cx="150" cy="150" r="140" fill="url(#mainGradient)" opacity="0.9"/>
+  
+  <!-- Terminal window background -->
+  <rect x="50" y="80" width="200" height="140" rx="15" ry="15" fill="url(#terminalGradient)" stroke="#3d2e55" stroke-width="2"/>
+  
+  <!-- Terminal header -->
+  <rect x="50" y="80" width="200" height="25" rx="15" ry="15" fill="#7c4dff"/>
+  <rect x="50" y="92" width="200" height="13" fill="#7c4dff"/>
+  
+  <!-- Terminal buttons -->
+  <circle cx="65" cy="92" r="4" fill="#ff3b7f"/>
+  <circle cx="80" cy="92" r="4" fill="#ffab40"/>
+  <circle cx="95" cy="92" r="4" fill="#00e5ff"/>
+  
+  <!-- Terminal title -->
+  <text x="150" y="97" font-family="monospace" font-size="10" fill="white" text-anchor="middle" font-weight="bold">SYSHELL</text>
+  
+  <!-- Terminal content lines -->
+  <text x="60" y="125" font-family="monospace" font-size="11" fill="#00e5ff" filter="url(#glow)">root@target:~$ id</text>
+  <text x="60" y="145" font-family="monospace" font-size="11" fill="#e6e6f0">uid=0(root) gid=0(root)</text>
+  <text x="60" y="165" font-family="monospace" font-size="11" fill="#00e5ff" filter="url(#glow)">root@target:~$ █</text>
+  
+  <!-- Security shield -->
+  <path d="M150 40 L170 50 L170 70 L150 85 L130 70 L130 50 Z" fill="url(#glowGradient)" filter="url(#glow)" opacity="0.8"/>
+  <path d="M150 45 L165 52 L165 68 L150 80 L135 68 L135 52 Z" fill="none" stroke="#00e5ff" stroke-width="2"/>
+  
+  <!-- Lock symbol in shield -->
+  <rect x="145" y="58" width="10" height="8" rx="2" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+  <circle cx="150" cy="62" r="3" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+  
+  <!-- Code brackets around the terminal -->
+  <text x="35" y="150" font-family="monospace" font-size="40" fill="#ff3b7f" opacity="0.6" font-weight="bold">{</text>
+  <text x="255" y="150" font-family="monospace" font-size="40" fill="#ff3b7f" opacity="0.6" font-weight="bold">}</text>
+  
+  <!-- Binary flow animation paths -->
+  <path d="M50 240 Q150 260 250 240" fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.4">
+    <animate attributeName="stroke-dasharray" values="0,10;10,0;0,10" dur="3s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Additional security elements -->
+  <circle cx="80" cy="50" r="3" fill="#00e5ff" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="220" cy="60" r="3" fill="#ff3b7f" opacity="0.7">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="70" cy="250" r="3" fill="#00e5ff" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="230" cy="240" r="3" fill="#7c4dff" opacity="0.7">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- PHP tag -->
+  <text x="150" y="275" font-family="monospace" font-size="14" fill="#7c4dff" text-anchor="middle" font-weight="bold" opacity="0.8">&lt;?php ?&gt;</text>
+</svg>
